@@ -1,0 +1,14 @@
+{
+  "name": "blackboard",
+  "version": "1.0.0",
+  "description": "Leraning website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tharmarajah Saranyan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
