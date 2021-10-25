@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "name": "Programming for Computer Science (Sc) ",
     "code": "COIS 1020H",
     "difficulty": "easy",
@@ -9,6 +10,7 @@
     "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
   },
   {
+    "id": 1,
     "name": " Introduction to Data Science ",
     "code": "COIS 1400H",
     "difficulty": "easy",
@@ -18,15 +20,17 @@
     "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
   },
   {
+    "id": 2,
     "name": "Data Structures and Algorithm",
     "code": "COIS 2020H",
     "difficulty": "hard",
-    "ratingsAverage": 4.0,
+    "ratingsAverage": 4,
     "ratingsQuantity": 136,
     "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
     "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
   },
   {
+    "id": 3,
     "name": "Computer Organization",
     "code": "COIS 2300H",
     "difficulty": "meium",
@@ -34,5 +38,15 @@
     "ratingsQuantity": 316,
     "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
     "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
+  },
+  {
+    "id": 4,
+    "name": "Data Structures and Algorithms II",
+    "code": "COIS 3020H",
+    "difficulty": "hard",
+    "ratingsAverage": 4,
+    "ratingsQuantity": 116,
+    "description": "A continuation of COIS 2020H, this course introduces more complex data structures and algorithmic techniques. Core topics include adjacency matrices and lists, randomly built binary search trees, augmented data structures, tries, binomial heaps, B-trees, disjoint sets, and quad trees.",
+    "pre-co-requisite": "COIS 2020H. Recommended: COIS-MATH 2600H"
   }
 ]
