@@ -22,6 +22,26 @@ app.get("/api/v1/courses", (req, res) => {
   });
 });
 
+app.get("/api/v1/courses/:id", (req, res) => {
+  const id = req.params.id * 1; // String to a number by multiplying
+  const course = courses.find((el) => el.id === id);
+
+  //   if (id >= courses.length) {
+  if (!course) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      course,
+    },
+  });
+});
+
 app.post("/api/v1/courses", (req, res) => {
   const newId = courses[courses.length - 1].id + 1;
   // Object.assign create a new object by merging two existing objects together
