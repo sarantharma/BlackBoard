@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Programming for Computer Science (Sc) ",
+    "code": "COIS 1020H",
+    "difficulty": "easy",
+    "ratingsAverage": 4.7,
+    "ratingsQuantity": 436,
+    "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
+    "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
+  },
+  {
+    "name": " Introduction to Data Science ",
+    "code": "COIS 1400H",
+    "difficulty": "easy",
+    "ratingsAverage": 4.3,
+    "ratingsQuantity": 361,
+    "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
+    "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
+  },
+  {
+    "name": "Data Structures and Algorithm",
+    "code": "COIS 2020H",
+    "difficulty": "hard",
+    "ratingsAverage": 4.0,
+    "ratingsQuantity": 136,
+    "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
+    "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
+  },
+  {
+    "name": "Computer Organization",
+    "code": "COIS 2300H",
+    "difficulty": "meium",
+    "ratingsAverage": 4.5,
+    "ratingsQuantity": 316,
+    "description": "Programming for computer science requires a solid foundation in the software development process, including algorithmic design, abstraction, implementation, testing, and documentation. Core topics include sequencing, selection, iteration, simple data types, expressions, and arrays, as well as the object-oriented notions of classes, methods, inheritance, and polymorphism",
+    "pre-co-requisite": "COIS 1010H or PHYS 1001H or MATH 1110H. Students without prior programming experience should take COIS 1010H as a prerequisite"
+  }
+]
