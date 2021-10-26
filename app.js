@@ -43,7 +43,7 @@ app.get("/api/v1/courses/:id", (req, res) => {
 });
 
 app.patch("/api/v1/courses/:id", (req, res) => {
-  if (req.paramsid * 1 >= courses.length) {
+  if (req.params.id * 1 >= courses.length) {
     return res.status(404).json({
       status: "fail",
       message: "Invalid ID",
@@ -74,6 +74,19 @@ app.post("/api/v1/courses", (req, res) => {
       });
     }
   );
+});
+
+app.delete("/api/v1/courses/:id", (req, res) => {
+  if (req.params.id * 1 >= courses.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  res.status(200).json({
+    status: "success",
+    data: null,
+  });
 });
 
 const port = 2000;
