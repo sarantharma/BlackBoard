@@ -42,6 +42,19 @@ app.get("/api/v1/courses/:id", (req, res) => {
   });
 });
 
+app.patch("/api/v1/courses/:id", (req, res) => {
+  if (req.paramsid * 1 >= courses.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  res.status(200).json({
+    status: "success",
+    tour: "<Updated courses is here>",
+  });
+});
+
 app.post("/api/v1/courses", (req, res) => {
   const newId = courses[courses.length - 1].id + 1;
   // Object.assign create a new object by merging two existing objects together
