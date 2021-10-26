@@ -17,7 +17,7 @@ const courses = JSON.parse(
 );
 
 // 2) Route Handlers
-
+// Courses
 const getAllCourses = (req, res) => {
   res.status(200).json({
     status: "success",
@@ -95,6 +95,42 @@ const deleteCourse = (req, res) => {
   });
 };
 
+// Users
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "This rout is not yet defined",
+  });
+};
+
+const createUser = (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "This rout is not yet defined",
+  });
+};
+
+const getUser = (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "This rout is not yet defined",
+  });
+};
+
+const updateUser = (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "This rout is not yet defined",
+  });
+};
+
+const deleteUser = (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "This rout is not yet defined",
+  });
+};
+
 // 3) Routes
 
 // app.get("/api/v1/courses", getAllCourses);
@@ -114,6 +150,14 @@ app
   .get(getCourse)
   .patch(updateCourse)
   .delete(deleteCourse);
+
+app.route("/api/v1/users").get(getAllUsers).post(createUser);
+
+app
+  .route("/api/v1/users/:id")
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
 
 const port = 2000;
 app.listen(port, () => {
