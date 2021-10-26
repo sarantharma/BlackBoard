@@ -131,33 +131,31 @@ const deleteUser = (req, res) => {
   });
 };
 
-// 3) Routes
-
 // app.get("/api/v1/courses", getAllCourses);
-
 // app.post("/api/v1/courses", createCourse);
-
 // app.get("/api/v1/courses/:id", getCourse);
-
 // app.patch("/api/v1/courses/:id", updateCourse);
-
 // app.delete("/api/v1/courses/:id", deleteCourse);
 
-app.route("/api/v1/courses").get(getAllCourses).post(createCourse);
+// 3) Routes
 
-app
-  .route("/api/v1/courses/:id")
+const courseRouter = express.Router();
+const userRouter = express.Router();
+
+app.use("/api/v1/courses", courseRouter);
+app.use("/api/v1/courses", userRouter);
+
+courseRouter.route("/").get(getAllCourses).post(createCourse);
+
+courseRouter
+  .route("/:id")
   .get(getCourse)
   .patch(updateCourse)
   .delete(deleteCourse);
 
-app.route("/api/v1/users").get(getAllUsers).post(createUser);
+userRouter.route("/").get(getAllUsers).post(createUser);
 
-app
-  .route("/api/v1/users/:id")
-  .get(getUser)
-  .patch(updateUser)
-  .delete(deleteUser);
+userRouter.route("/:id").get(getUser).patch(updateUser).delete(deleteUser);
 
 const port = 2000;
 app.listen(port, () => {
