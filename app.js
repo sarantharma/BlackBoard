@@ -1,8 +1,12 @@
 const express = require("express");
 const fs = require("fs"); // Require to read file
-const { toUSVString } = require("util");
+const morgon = require("morgan");
 
 const app = express();
+
+//1) Middlewares
+
+app.use(morgon("dev"));
 
 // Middleware used to convert data to JSON format (Basically used in POST request)
 app.use(express.json());
@@ -11,6 +15,8 @@ app.use(express.json());
 const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/courses-simple.json`)
 );
+
+// 2) Route Handlers
 
 const getAllCourses = (req, res) => {
   res.status(200).json({
@@ -88,6 +94,8 @@ const deleteCourse = (req, res) => {
     data: null,
   });
 };
+
+// 3) Routes
 
 // app.get("/api/v1/courses", getAllCourses);
 
