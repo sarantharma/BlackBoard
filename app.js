@@ -12,7 +12,7 @@ const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/courses-simple.json`)
 );
 
-app.get("/api/v1/courses", (req, res) => {
+const getAllCourses = (req, res) => {
   res.status(200).json({
     status: "success",
     results: courses.length,
@@ -20,9 +20,9 @@ app.get("/api/v1/courses", (req, res) => {
       courses,
     },
   });
-});
+};
 
-app.get("/api/v1/courses/:id", (req, res) => {
+const getCourse = (req, res) => {
   const id = req.params.id * 1; // String to a number by multiplying
   const course = courses.find((el) => el.id === id);
 
@@ -40,9 +40,9 @@ app.get("/api/v1/courses/:id", (req, res) => {
       course,
     },
   });
-});
+};
 
-app.patch("/api/v1/courses/:id", (req, res) => {
+const updateCourse = (req, res) => {
   if (req.params.id * 1 >= courses.length) {
     return res.status(404).json({
       status: "fail",
@@ -53,9 +53,9 @@ app.patch("/api/v1/courses/:id", (req, res) => {
     status: "success",
     tour: "<Updated courses is here>",
   });
-});
+};
 
-app.post("/api/v1/courses", (req, res) => {
+const createCourse = (req, res) => {
   const newId = courses[courses.length - 1].id + 1;
   // Object.assign create a new object by merging two existing objects together
   console.log(req.body);
@@ -74,9 +74,9 @@ app.post("/api/v1/courses", (req, res) => {
       });
     }
   );
-});
+};
 
-app.delete("/api/v1/courses/:id", (req, res) => {
+const deleteCourse = (req, res) => {
   if (req.params.id * 1 >= courses.length) {
     return res.status(404).json({
       status: "fail",
@@ -87,7 +87,25 @@ app.delete("/api/v1/courses/:id", (req, res) => {
     status: "success",
     data: null,
   });
-});
+};
+
+// app.get("/api/v1/courses", getAllCourses);
+
+// app.post("/api/v1/courses", createCourse);
+
+// app.get("/api/v1/courses/:id", getCourse);
+
+// app.patch("/api/v1/courses/:id", updateCourse);
+
+// app.delete("/api/v1/courses/:id", deleteCourse);
+
+app.route("/api/v1/courses").get(getAllCourses).post(createCourse);
+
+app
+  .route("/api/v1/courses/:id")
+  .get(getCourse)
+  .patch(updateCourse)
+  .delete(deleteCourse);
 
 const port = 2000;
 app.listen(port, () => {
