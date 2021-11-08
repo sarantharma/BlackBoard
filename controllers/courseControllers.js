@@ -16,6 +16,15 @@ exports.checkID = (req, res, next, val) => {
   next();
 };
 
+exports.checkBody = (req, res, next) => {
+  if (!req.body.name || !req.body.code || !req.body.description) {
+    return res.status(400).json({
+      status: "fail",
+      message: "Missing name or code or description",
+    });
+  }
+};
+
 exports.getAllCourses = (req, res) => {
   res.status(200).json({
     status: "success",
