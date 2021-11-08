@@ -5,6 +5,17 @@ const courses = JSON.parse(
   fs.readFileSync(`${__dirname}/../dev-data/courses-simple.json`)
 );
 
+exports.checkID = (req, res, next, val) => {
+  console.log(`This is ${val}`);
+  if (req.params.id * 1 >= courses.length) {
+    return res.status(404).json({
+      status: "fail",
+      message: "Invalid ID",
+    });
+  }
+  next();
+};
+
 exports.getAllCourses = (req, res) => {
   res.status(200).json({
     status: "success",
@@ -19,14 +30,6 @@ exports.getCourse = (req, res) => {
   const id = req.params.id * 1; // String to a number by multiplying
   const course = courses.find((el) => el.id === id);
 
-  //   if (id >= courses.length) {
-  if (!course) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
-
   res.status(200).json({
     status: "success",
     data: {
@@ -36,12 +39,6 @@ exports.getCourse = (req, res) => {
 };
 
 exports.updateCourse = (req, res) => {
-  if (req.params.id * 1 >= courses.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
   res.status(200).json({
     status: "success",
     tour: "<Updated courses is here>",
@@ -70,13 +67,7 @@ exports.createCourse = (req, res) => {
 };
 
 exports.deleteCourse = (req, res) => {
-  if (req.params.id * 1 >= courses.length) {
-    return res.status(404).json({
-      status: "fail",
-      message: "Invalid ID",
-    });
-  }
-  res.status(200).json({
+  res.status(204).json({
     status: "success",
     data: null,
   });

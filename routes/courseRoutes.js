@@ -3,6 +3,8 @@ const courseController = require("./../controllers/courseControllers");
 
 const router = express.Router();
 
+router.param("id", courseController.checkID);
+
 router
   .route("/")
   .get(courseController.getAllCourses)
